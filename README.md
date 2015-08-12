@@ -11,7 +11,13 @@ You will need the following:
 * [MATLAB](http://www.mathworks.com/products/matlab/)
 
 ## Steps
-
+* Write your computational routine. It can include several functions. In our example, there is a simple function myfunc.cpp, which takes a matrix as input, performs the QR decomposition, and returns matrix R as output. To type your code, edit an available Visual Studio project with ArrayFire set up, like helloworld in the examples folder (or create your own).
+* Open the Project Properties dialog box and click on Configuration Properties -> General. Change the Target Extension to .lib and select the Static library (.lib) in the Configuration Type.
+* If you don't want to debug your code, then choose the Release configuration. If you intend to debug, then switch to the Debug configuration. You have to change the Runtime Library entry in Configuration Properties -> C/C++ -> Code Generation to Multi-threaded DLL (/MD). It is important, otherwise in will conflict with MATLAB.
+* Compile the .cpp file to object file (.obj) by right clicking on the source file and selecting Compile or by hitting Ctrl+F7. The linking will be done from within MATLAB.
+* Now, write the MEX wrapper. This function generally contains input processing, checking for input types and sizes, allocating output variables, and calling the computational routine you wrote before (see myfunc_mex.cpp in our example).
+* Copy the .obj and .h files from the Visual Studio 2013 project to the same directory where your MEX wrapper C++ file is (the header should be included in your MEX wrapper .cpp file). If you copy them into the working directory of MATLAB, you don't have set the path.
+* jkljlk
 
 ## Remarks
 
