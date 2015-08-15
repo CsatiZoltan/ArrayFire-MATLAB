@@ -1,0 +1,10 @@
+﻿Build started 2015.08.13. 13:00:32.
+     1>Project "c:\Users\Zozo\Documents\Visual Studio 2013\Projects\modifyHello\myfunc_vs2013.vcxproj" on node 2 (ClCompile target(s)).
+     1>ClCompile:
+         E:\Programok\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /IE:\Programok\ArrayFire\v3\include /Zi /nologo /W3 /WX- /O2 /Oi /GL /D NOMINMAX /D "ASSETS_DIR=R\"(E:\Programok\ArrayFire\v3/assets)\"" /D AF_CUDA /D AF_RELEASE /D _MBCS /Gm- /EHsc /MD /GS /Gy /Zc:wchar_t /Zc:forScope /Fo"c:\Users\Zozo\Documents\Visual Studio 2013\Projects\modifyHello\CUDA\temp\Release\\" /Fd"c:\Users\Zozo\Documents\Visual Studio 2013\Projects\modifyHello\CUDA\temp\Release\vc120.pdb" /Gd /TP /errorReport:prompt myfunc.cpp
+         myfunc.cpp
+     1>Done Building Project "c:\Users\Zozo\Documents\Visual Studio 2013\Projects\modifyHello\myfunc_vs2013.vcxproj" (ClCompile target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.52
