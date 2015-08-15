@@ -11,7 +11,7 @@ function mexAF(gateway, objFile, backend, config)
 %   For more details, see https://github.com/CsatiZoltan/ArrayFire-MATLAB
 %
 %   Zoltan Csati
-%   2015/08/14
+%   2015/08/15
 
 
 % Check architecture
@@ -25,9 +25,13 @@ thisFileFolder = mfilename('fullpath');
 [folder, name, ~] = fileparts(which(thisFileFolder));
 cd(folder);
 mexFile = [name, '.mexw64'];
-AFroot = getenv('%AF_PATH%');
-AFinc = ['-I' 'E:\Programok\ArrayFire\v3\include'];
-AFlib = ['-L' 'E:\Programok\ArrayFire\v3\lib'];
+AFroot = getenv('AF_PATH');
+if isempty(AFroot)
+    error('MATLAB:mexAF', ['ArrayFire installation location not found.',...
+        ' Check that AF_PATH is added to your environmental variables.']);
+end
+AFinc = ['-I' AFroot '\include'];
+AFlib = ['-L' AFroot '\lib'];
 longInt = '-largeArrayDims';
 
 % Select the backend
